@@ -10,7 +10,6 @@ import org.robolectric.annotation.Config;
 import android.widget.TextView;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 @RunWith(RobolectricGradleTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 21)
@@ -19,10 +18,6 @@ public class MainActivityTest {
 
     @Before public void setUp() throws Exception {
         mainActivity = Robolectric.setupActivity(MainActivity.class);
-    }
-
-    @Test public void shouldNotBeNull() throws Exception {
-        assertNotNull(mainActivity);
     }
 
     @Test public void shouldInjectMockStringFactory() throws Exception {

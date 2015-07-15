@@ -7,16 +7,14 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 public class MyApplication extends Application {
-    @Singleton
-    @Component(modules = { AndroidModule.class, CommonModule.class })
+    @Singleton @Component(modules = { AndroidModule.class, CommonModule.class })
     public interface ApplicationComponent {
         void inject(MainActivity mainActivity);
     }
 
     private ApplicationComponent component;
 
-    @Override
-    public void onCreate() {
+    @Override public void onCreate() {
         super.onCreate();
         component = DaggerMyApplication_ApplicationComponent.builder()
                 .androidModule(new AndroidModule(this))
