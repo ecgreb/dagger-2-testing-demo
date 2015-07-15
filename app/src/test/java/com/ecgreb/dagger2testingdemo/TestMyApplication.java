@@ -11,6 +11,8 @@ public class TestMyApplication extends MyApplication {
         void inject(MainActivity mainActivity);
     }
 
+    private TestApplicationComponent component;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -18,5 +20,10 @@ public class TestMyApplication extends MyApplication {
                 .testAndroidModule(new TestAndroidModule(this))
                 .commonModule(new CommonModule())
                 .build();
+    }
+
+    @Override
+    public ApplicationComponent component() {
+        return component;
     }
 }

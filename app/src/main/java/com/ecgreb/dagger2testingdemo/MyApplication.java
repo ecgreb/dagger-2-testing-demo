@@ -13,7 +13,7 @@ public class MyApplication extends Application {
         void inject(MainActivity mainActivity);
     }
 
-    ApplicationComponent component;
+    private ApplicationComponent component;
 
     @Override
     public void onCreate() {
