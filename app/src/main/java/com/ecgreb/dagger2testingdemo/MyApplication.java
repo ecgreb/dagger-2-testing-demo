@@ -8,7 +8,7 @@ import dagger.Component;
 
 public class MyApplication extends Application {
     @Singleton
-    @Component(modules = AndroidModule.class)
+    @Component(modules = { AndroidModule.class, CommonModule.class })
     public interface ApplicationComponent {
         void inject(MainActivity mainActivity);
     }
@@ -20,6 +20,7 @@ public class MyApplication extends Application {
         super.onCreate();
         component = DaggerMyApplication_ApplicationComponent.builder()
                 .androidModule(new AndroidModule(this))
+                .commonModule(new CommonModule())
                 .build();
     }
 

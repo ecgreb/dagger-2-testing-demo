@@ -29,4 +29,9 @@ public class MainActivityTest {
         TextView greeting = (TextView) mainActivity.findViewById(R.id.greeting);
         assertEquals("Fake greeting", greeting.getText());
     }
+
+    @Test public void shouldInjectMagicNumber() throws Exception {
+        TextView number = (TextView) mainActivity.findViewById(R.id.number);
+        assertEquals("The magic number is 4.", number.getText());
+    }
 }
